@@ -6,14 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Antique extends Model
 {
-  /**
-   * Create a new Eloquent Collection instance.
-   *
-   * @param array $models
-   * @return \Illuminate\Database\Eloquent\Collection
-   */
-  public function newCollection(array $models = [])
+  public function periods()
   {
-      return new JoinByRangeCollection($models);
+      return $this->hasMany('App\CustomRelations\AntiquePeriod\Period');
   }
 }
